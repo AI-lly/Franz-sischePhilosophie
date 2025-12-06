@@ -1,0 +1,98 @@
+\documentclass[11pt, a4paper]{book}
+
+% -------------------
+% Encoding & Sprache
+% -------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} % Deutsche Silbentrennung und Bezeichnungen
+
+% -------------------
+% Typografie & Fonts
+% -------------------
+\usepackage{lmodern}      % Modernere Schriftart
+\usepackage{microtype}    % Verbessertes Schriftbild (Randausgleich)
+\usepackage[onehalfspacing]{setspace} % 1.5-zeiliger Abstand für bessere Lesbarkeit
+
+% -------------------
+% Layout & Seitenränder
+% -------------------
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{fancyhdr}     % Kopf- und Fußzeilen
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{\thepage}
+
+% -------------------
+% Grafiken & Farben
+% -------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{frenchblue}{RGB}{0, 85, 164} % Ein schönes Dunkelblau für Überschriften
+
+% -------------------
+% Mathematik & Symbole
+% -------------------
+\usepackage{amsmath, amssymb}
+
+% -------------------
+% Zitate & Bibliographie
+% -------------------
+\usepackage[backend=biber, style=authoryear, natbib=true]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage{csquotes}
+
+% -------------------
+% Hyperlinks
+% -------------------
+\usepackage[hidelinks, colorlinks=true, linkcolor=frenchblue, citecolor=frenchblue, urlcolor=frenchblue]{hyperref}
+
+% -------------------
+% Design-Anpassungen (Kapitelüberschriften)
+% -------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\color{frenchblue}}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{black}}
+  {\thesection}{1em}{}
+
+% -------------------
+% Eigene Boxen für Intuition & Definition
+% -------------------
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\newtcolorbox{intuition}[1][Intuitive Erklärung]{
+  colback=frenchblue!5!white,
+  colframe=frenchblue,
+  fonttitle=\bfseries,
+  title={#1},
+  arc=0mm,
+  enhanced,
+  breakable,
+  attach boxed title to top left={yshift=-2mm, xshift=2mm},
+  boxed title style={colback=frenchblue, colframe=frenchblue}
+}
+
+\newtcolorbox{definitionbox}[1][Akademische Definition]{
+  colback=gray!5!white,
+  colframe=gray!75!black,
+  fonttitle=\bfseries,
+  title={#1},
+  arc=0mm,
+  enhanced,
+  breakable,
+  attach boxed title to top left={yshift=-2mm, xshift=2mm},
+  boxed title style={colback=gray!75!black, colframe=gray!75!black}
+}
+
+
+% -------------------
+% Titelei-Daten
+% -------------------
+\title{\textbf{Licht und Schatten}\\ \large Eine Reise durch die Französische Philosophie}
+\author{Ilyas Karacabey}
+\date{\today}
